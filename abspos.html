@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute</title>
+    <style>
+        :root {
+            --bg-color: #eee;
+            --content-color: red;
+            --color: #bbb;
+            --color-2: #999;
+            --bg-dark: #222;
+            --bg-light: #fafafa;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            padding: 4em;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--bg-dark);
+            }
+        }
+
+        .container {
+            margin: 4em;
+            position: relative;
+            border: 2px dashed var(--color);
+            min-height: 300px;
+            max-width: 300px;
+        }
+
+        .block {
+            width: 4em;
+            height: 4em;
+            border-radius: .25em;
+            box-shadow: 0px 0px 2px 3px var(--color-2), 1px 1px 3px 4px var(--color);;
+        }
+
+        .dot {
+            width: .75em;
+            height: .75em;
+            border-radius: .5em;
+            background-color: var(--content-color);
+
+        }
+
+        .pos {
+            background-color: var(--bg-color);
+            position: absolute;
+            inset: auto auto 50% 50%;
+            transform: translate(-50%, 50%);
+
+        }
+
+        .pos-bottom-right {
+            background-color: var(--bg-color);
+            position: absolute;
+            inset: 100% auto auto 100%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .pos-top-left {
+            background-color: var(--bg-color);
+            position: absolute;
+            inset: 0 auto auto 0;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .grid-center {
+            display: grid;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inset-center {
+            position: absolute;
+            inset: 50% 50% auto auto;
+            transform: translate(50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="block pos flex-center">1
+        </div>
+        <div class="block pos grid-center" style="--content-color:darkgreen">
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="block pos flex-center" style="--content-color:magenta">
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="block pos">
+            <span class="dot inset-center"></span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="block pos-top-left" style="--content-color:blue">
+            <span class="dot inset-center"></span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="block pos-bottom-right" style="--content-color:darkorange">
+            <span class="dot inset-center"></span>
+        </div>
+    </div>
+    <span style="color: var(--color);">
+        absolute position with block container set via translate.
+    </span>
+    <div style="transform: translateY(50%);padding: 4em; border: 3pt double #888;">
+        <div class="block pos-top-left" style="--content-color:brown">
+            <span class="dot inset-center"></span>
+        </div>
+    </div>
+</body>
+
+</html>

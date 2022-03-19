@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=600, initial-scale=1.0">
+    <title>Display Prop</title>
+    <style>
+        :root {
+            --bg-color: hsl(6, 60%, 40%);
+        }
+
+        h1{
+            font-family: cursive;
+            font-size: 3em;
+            font-weight: 900;
+            margin-block: .5em;
+
+        }
+        body {
+            background-color: beige;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            max-width: 500px;
+            padding-inline: 2em;
+        }
+
+        .btn {
+            /* display: inline-flex; */
+            background-color: var(--bg-color);
+            border: 1px solid var(--bg-color);
+            border-radius: 5px;
+            color: #fff;
+            padding: .5em 1em;
+            font-size: 1.25em;
+            
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .btn:focus{
+            outline-offset: 3px;
+            outline-color: var(--bg-color);
+        }
+
+        div{
+            word-wrap: break-word;
+        }
+    </style>
+    <script>
+        function btnClick(){
+            console.info('I have been clicked');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>
+        show buttons
+    </h1>
+    <div>
+        Click immediately to get life time opprtunity. 
+    </div>
+        <p>
+            <button class="btn" onclick="btnClick()">Click here lets make this button really big</button>
+        </p>
+</body>
+
+</html>
