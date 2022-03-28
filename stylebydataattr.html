@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Attr</title>
+    <style>
+        .card{
+            padding: 1em;
+            max-width: 20rem;
+            background-color: beige;
+        }
+         .card > h2{
+             margin-block: .25em;
+         }
+
+        .card-content{
+            background-color: blanchedalmond;
+            display: flex;
+            flex-direction: column;
+            gap:1em;
+            padding: 1em;
+        }
+
+        .btn{
+            padding: .5em 1em;
+            border: 1pt solid black;
+            cursor: pointer;
+        }
+
+        /* .btn:hover{
+            filter: brightness(.7)
+        } */
+
+        .btn[primary]{
+            background-color: #0000ff;
+            color: white;
+        }
+        .btn[primary]:hover{
+            background-color: darkcyan;
+        }
+
+        .btn[color-secondary]{
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Awesome</h2>
+        <div class="card-content">
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi libero est ab ullam molestiae,
+                voluptates veniam voluptate error, incidunt explicabo at quam ea? Praesentium voluptas nobis cum optio
+                accusamus minima!
+            </div>
+            <div>
+                <button primary class="btn">Show</button>
+                <button color-secondary class="btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
