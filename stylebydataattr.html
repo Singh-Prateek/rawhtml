@@ -11,7 +11,11 @@
             --pri-color: 0, 0, 255;
             --sec-color: 80, 80, 80;
             --secondary-color: 0, 0%;
-            --primary-color: 230, 100%;
+            --primary-color: 225, 100%;
+            --p-white: 0, 0%, 95%;
+            --p-black: 0, 0%, 5%;
+            --btn-bg-color: var(--primary-color);
+            --btn-color: hsl(var(--p-white));
         }
 
         .card {
@@ -34,17 +38,18 @@
 
         .btn {
             padding: .5em 1em;
-            border: 1pt solid black;
+            border: 2pt double hsl(var(--p-black));
             cursor: pointer;
+            background-color: hsl(var(--btn-bg-color),50%);
+            color: var(--btn-color);
         }
-
-        /* .btn:hover{
-            filter: brightness(.7)
-        } */
+        .btn:hover{
+            background-color: hsl(var(--btn-bg-color),40%);
+        }
 
         .btn[primary] {
             background-color: rgba(var(--pri-color), .7);
-            color: white;
+            color: hsl(var(--p-white));
         }
 
         .btn[primary]:hover {
@@ -53,7 +58,7 @@
 
         .btn[secondary] {
             background-color: rgba(var(--sec-color), .7);
-            color: white;
+            color: hsl(var(--p-white));
         }
 
         .btn[secondary]:hover {
@@ -61,22 +66,16 @@
         }
 
         .btn[color-secondary] {
-            background-color: hsl(var(--secondary-color),80%);
-            color: black;
+            --btn-bg-color: var(--secondary-color);
+            --btn-color: hsl(var(--p-black));
         }
         
         .btn[color-secondary]:hover {
-            background-color: hsl(var(--secondary-color), 30%);
-            color: white;
+            --btn-color: hsl(var(--p-white));
         }
 
         .btn[color-primary] {
-            background-color: hsl(var(--primary-color),50%);
-            color: white;
-        }
-
-        .btn[color-primary]:hover {
-            background-color: hsl(var(--primary-color), 30%);
+            --btn-bg-color: var(--primary-color);
         }
 
         .btn-group {
