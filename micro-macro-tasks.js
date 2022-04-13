@@ -11,8 +11,6 @@ setTimeout(() => {
 
 a.then((b) => console.log(b));
 
-(new Promise())
-
 const d = () => console.log('D');
 
 d();
