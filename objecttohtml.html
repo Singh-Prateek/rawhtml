@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render</title>
+    <script>
+        const renderDOM = (id) => {
+            const rootElement = document.getElementById(id);
+
+            rootElement.appendChild(createNode(dataStruct));
+        }
+
+        const dataStruct = {
+            type: 'div',
+            props: { id: 'container' },
+            children: [
+                {
+                    type: 'H1',
+                    props: { style: 'color:green' },
+                    children: 'Hello World'
+                },
+                {
+                    type: 'H2',
+                    children: 'Welcome to renderer'
+                },
+                {
+                    type: 'UL',
+                    children: [
+                        {
+                            type:'LI',
+                            children:'alpha'
+                        },
+                        {
+                            type:'LI',
+                            children:'beta'
+                        },
+                        {
+                            type:'LI',
+                            children:'delta'
+                        },
+                        {
+                            type:'LI',
+                            children:'gamma'
+                        }
+                    ]
+                }
+            ]
+        }
+
+        const createNode = (dataObj) => {
+
+            if (typeof dataObj != "object") {
+                console.error('object should be the argument')
+                return;
+            }
+
+            const { type, props, children } = dataObj;
+
+            const childEl = document.createElement(type);
+
+            if (!!props) {
+
+                for (let prop in props) {
+                    childEl[prop] = props[prop];
+                }
+            }
+
+            if (typeof children === "string") {
+                childEl.innerText = children;
+            } else {
+
+                const fragment = document.createDocumentFragment();
+
+                for (let child of children) {
+                    fragment.appendChild(createNode(child));
+                }
+                childEl.appendChild(fragment);
+            }
+
+            return childEl;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="placeHolder"></div>
+    <script>
+        renderDOM('placeHolder');
+    </script>
+</body>
+
+</html>
