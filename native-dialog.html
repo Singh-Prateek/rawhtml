@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/open-props" />
-    <link rel="stylesheet" href="https://unpkg.com/open-props/buttons.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/open-props/buttons.min.css" />
     <title>HTML Dialog</title>
     <style>
         .container {
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-
+   <a href="https://web.dev/building-a-dialog-component/" target="_blank" rel="noopener noreferrer"> https://web.dev/building-a-dialog-component</a>
     <div class="container">
         <div class="content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aliquam, quas itaque temporibus
@@ -44,7 +44,7 @@
             eligendi natus ex explicabo consequatur! Esse error numquam illum magni, nihil autem dolore obcaecati
             quisquam. Odio, illum.
         </div>
-        <button onclick="dialog.showModal()">Show html dialog</button>
+        <button type="submit" onclick="dialog.showModal()">Show html dialog</button>
     </div>
 
     <dialog id="dialog" class="dialog">
@@ -55,7 +55,7 @@
             <div>
                 this is a default html dialog
             </div>
-            <button>OK</button>
+            <button type="submit">OK</button>
         </form>
 
     </dialog>
