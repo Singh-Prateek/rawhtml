@@ -18,7 +18,9 @@
 
         body {
             background-color: var(--bg-light);
-            padding: 4em;
+            padding-inline: 4em;
+            padding-block: 1em;
+            color: var(--color);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -28,7 +30,7 @@
         }
 
         .container {
-            margin: 4em;
+            margin: 1em 2em 4em;
             position: relative;
             border: 2px dashed var(--color);
             min-height: 300px;
@@ -39,7 +41,8 @@
             width: 4em;
             height: 4em;
             border-radius: .25em;
-            box-shadow: 0px 0px 2px 3px var(--color-2), 1px 1px 3px 4px var(--color);;
+            box-shadow: 0px 0px 2px 3px var(--color-2), 1px 1px 3px 4px var(--color);
+            ;
         }
 
         .dot {
@@ -95,18 +98,19 @@
 </head>
 
 <body>
+    grid center
     <div class="container">
-        <div class="block pos flex-center">1
-        </div>
         <div class="block pos grid-center" style="--content-color:darkgreen">
             <span class="dot"></span>
         </div>
     </div>
+    flex box center
     <div class="container">
         <div class="block pos flex-center" style="--content-color:magenta">
             <span class="dot"></span>
         </div>
     </div>
+    using position and translate
     <div class="container">
         <div class="block pos">
             <span class="dot inset-center"></span>
@@ -122,14 +126,15 @@
             <span class="dot inset-center"></span>
         </div>
     </div>
-    <span style="color: var(--color);">
-        absolute position with block container set via translate.
-    </span>
+
+    absolute position with block container set via translate.
+
     <div style="transform: translateY(50%);padding: 4em; border: 3pt double #888;">
         <div class="block pos-top-left" style="--content-color:brown">
             <span class="dot inset-center"></span>
         </div>
     </div>
+    observe impact of translateY 50%
 </body>
 
 </html>
